@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist/blocks.build.js
+vendor/
+build/
+package-lock.json
+composer.lock
+.DS_Store
+*.bak
+*.bak.js
+report*.txt
+.vscode/
