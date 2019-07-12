@@ -10,7 +10,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 VENDOR_DIR="$(dirname "$DIR" )"
 DEFAULTS="--standard="WP-Engine" --error-severity=6 --warning-severity=6  --ignore=*/build/*,*/node_modules/*,*/vendor/*"
 STRICT="--standard="WP-Engine-Strict" --error-severity=6 --warning-severity=6  --ignore=*/build/*,*/node_modules/*,*/vendor/*"
-REPORT_FULL="--report=source --report-file=report-full.txt"
+REPORT_FULL="--report=full --report-file=report-full.txt"
 REPORT_SOURCE="--report=source --report-file=report-source.txt"
 
 declare -a types=("full" "source")
