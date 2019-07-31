@@ -10,7 +10,9 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 PARENTDIR="$(dirname "$DIR")"
 echo ${PARENTDIR}
-${PARENTDIR}/vendor/bin/phpcs ${@}
+${PARENTDIR}/vendor/bin/phpcs ${@} --report=full --report-file=report-full.txt
+${PARENTDIR}/vendor/bin/phpcs ${@} --report=source --report-file=report-source.txt -v
+
 
 # VENDOR_DIR="$(dirname "$DIR" )"
 # DEFAULTS="--standard="WP-Engine" --error-severity=6 --warning-severity=6  --ignore=*/build/*,*/node_modules/*,*/vendor/*"

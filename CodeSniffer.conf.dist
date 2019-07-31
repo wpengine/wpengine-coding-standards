@@ -1,9 +1,10 @@
 <?php
  $phpCodeSnifferConfig = array (
-  'default_standard' => 'PSR2',
-  'report_format' => 'summary',
-  'show_warnings' => '0',
+  'installed_paths' => '../../../,../../wp-coding-standards/wpcs/,../../phpcompatibility/php-compatibility/,../../phpcompatibility/phpcompatibility-wp/',
+  'default_standard' => 'WP-Engine',
+  'report_format' => 'info',
   'show_progress' => '1',
   'report_width' => '120',
+  'colors' => '1',
 )
 ?>
