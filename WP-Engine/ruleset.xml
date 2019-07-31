@@ -2,8 +2,10 @@
 <ruleset name="WP Engine" namespace="WPE\CS">
 	<description>WP Engine Coding Standards</description>
 
+	<!-- <arg name="basepath" value="."/> -->
+
 	<!-- Set the default file path. -->
-    <file>.</file>
+    <!-- <file>views</file> -->
 
 	<!-- Only sniff PHP files -->
 	<arg name="extensions" value="php"/>
