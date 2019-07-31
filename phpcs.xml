@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Meh" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+    <description>Test</description>
+
+    <config name="installed_paths" value="../../phpcompatibility/php-compatibility/,../../phpcompatibility/phpcompatibility-wp/,../../wp-coding-standards/wpcs/"/>
+
+    <rule ref="./wpe-coding-standards/WP-Engine/ruleset.xml"/>
+
+    <config name="report" value="full"/>
+    <config name="reportFile" value="test.txt"/>
+
+</ruleset>
