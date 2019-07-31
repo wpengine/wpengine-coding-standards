@@ -2,8 +2,8 @@ VENDOR_BIN := ./vendor/bin
 
 install:
 	composer install
-	$(VENDOR_BIN)/phpcs --config-set installed_paths '../../../wpe-coding-standards/,../../wp-coding-standards/wpcs/,../../phpcompatibility/php-compatibility/,../../phpcompatibility/phpcompatibility-wp/'
-	$(VENDOR_BIN)/phpcs --config-set default_standard WordPress
+	$(VENDOR_BIN)/phpcs --config-set default_standard WP-Engine
+	$(VENDOR_BIN)/phpcs --config-set show_progress 1
 	$(VENDOR_BIN)/phpcs --config-set colors 1
 	chmod +x ${CURDIR}/bin/wpecs
 	chmod +x ${CURDIR}/bin/wpecbf
