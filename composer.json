@@ -1,6 +1,6 @@
 {
 	"name": "wpengine/wpecs",
-	"type": "phpcodesniffer-standard",
+	"type": "phpcodesniffer-wrapper",
 	"description": "PHP_CodeSniffer rules (sniffs) to enforce WP Engine coding conventions",
 	"keywords": [
 		"wpecs",
@@ -19,55 +19,20 @@
 	"repositories": [
 		{
             "type": "vcs",
-            "url": "git@github.com:ryanshoover/simple-csv-exporter.git"
-        },
-		{
-            "type": "vcs",
             "url": "git@github.com:stevenkword/WP-Engine-Coding-Standards.git"
-        }
+		}
     ],
 	"require": {
-		"ryanshoover/simple-csv-exporter": "*",
-		"wpengine/wpe-coding-standards": "*",
 		"php": ">=5.4",
-		"squizlabs/php_codesniffer": "^3.3.1"
+		"squizlabs/php_codesniffer": "^3.3.1",
+		"wpengine/wpengine-coding-standards": "*",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
 	},
-	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-		"phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
-	},
-    "minimum-stability": "dev",
+	"minimum-stability": "dev",
     "prefer-stable" : true,
-	"suggest": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
-	},
-	"scripts": {
-		"check-cs": [
-			"@php ./bin/wpecs"
-		],
-		"fix-cs": [
-			"@php ./bin/wpecbf"
-		],
-		"install-codestandards": [
-			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-		],
-		"run-tests": [
-			"@php ./vendor/phpunit/phpunit/phpunit --filter WordPress --bootstrap=\"./vendor/squizlabs/php_codesniffer/tests/bootstrap.php\" ./vendor/squizlabs/php_codesniffer/tests/AllTests.php"
-		],
-		"config-cs": [
-			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-			"\"vendor/bin/phpcs\" --config-set default_standard WP-Engine"
-		  ],
-		"post-install-cmd": "@config-cs",
-		"post-update-cmd": "@config-cs"
-	},
 	"support": {
 		"issues": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues",
 		"wiki": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki",
-		"source": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards"
-	},
-    "bin": [
-        "bin/wpecs",
-        "bin/wpecbf"
-    ]
+		"source": "https://github.com/wpengine/WPEngine-Coding-Standards"
+	}
 }

@@ -25,6 +25,4 @@ if [ "${1}" = "-h" ] || [ "${1}" = "--h" ]
 fi
 
 echo -e "Reports can be found in the target directory as 'report-full.txt' and 'report-source.txt'\n"
-
-
 echo -e "Try using 'wpecbf' to attempt fix the sniff violations automatically.\n"
