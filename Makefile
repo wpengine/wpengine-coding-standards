@@ -11,7 +11,9 @@ install:
 	@rm /usr/local/bin/wpecbf || true
 	@ln -s ${CURDIR}/bin/wpecs /usr/local/bin/wpecs
 	@ln -s ${CURDIR}/bin/wpecbf /usr/local/bin/wpecbf
-	@ $(VENDOR_BIN)/phpcs -i
+	@ $(VENDOR_BIN)/phpcs -i; echo "\n"
+	@echo "USAGE: wpecs [--strict] [phpcs-options] <path>\n"
+	@echo "For assistance getting started try 'wpecs -h'\n"
 update:
 	@git pull origin master
 	@make install
