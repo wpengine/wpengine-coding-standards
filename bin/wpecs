@@ -1,6 +1,9 @@
 #!/bin/bash
 
+echo -e "WP Engine Coding Standards\nVersion 1.0.0\n"
+
 SOURCE="${BASH_SOURCE[0]}"
+
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
   DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
   SOURCE="$(readlink "$SOURCE")"
@@ -8,40 +11,17 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 VENDOR_DIR="$(dirname "$DIR" )"
-DEFAULTS="--standard="WP-Engine" --error-severity=6 --warning-severity=6  --ignore=*/build/*,*/node_modules/*,*/vendor/*"
-STRICT="--standard="WP-Engine-Strict" --error-severity=6 --warning-severity=6  --ignore=*/build/*,*/node_modules/*,*/vendor/*"
-REPORT_FULL="--report=source --report-file=report-full.txt"
-REPORT_SOURCE="--report=source --report-file=report-source.txt"
 
-declare -a types=("full" "source")
-
-echo -e "WP Engine Coding Standards\nVersion 1.0.0\n"
+${VENDOR_DIR}/vendor/bin/phpcs --basepath=. --report-full=report-full.txt --report-source=report-source.txt --report-summary ${@}
 
 if [ "${1}" = "-h" ] || [ "${1}" = "--h" ]
     then
+        echo -e "WP Engine Coding Standards\n"
         echo -e "USAGE: wpecs [--strict] [phpcs-options] <path>\n"
         echo -e "<wpecs> Run the WP Engine Coding Standards\n"
         echo -e "<wpecbf> Attempt to fix sniffs against the WP Engine Strict Coding Standards\n"
-        echo -e "FLAGS:\n"
-        echo -e "-s or --strict Run the WP Engine Strict Coding Standards\n"
-        ${VENDOR_DIR}/vendor/bin/phpcs -h
-elif [ "${1}" = "-i" ]
-    then
-        ${VENDOR_DIR}/vendor/bin/phpcs -i
-elif [ "${1}" = "-s" ] || [ "${1}" = "--strict" ]
-    then
-        ${VENDOR_DIR}/vendor/bin/phpcs ${STRICT} .
-else
-    if [[ ! -z "${@}" ]]
-        then
-            FLAGS=${@}
-        else
-            FLAGS='.'
-    fi
-    echo Running full report: ${type}
-    ${VENDOR_DIR}/vendor/bin/phpcs ${DEFAULTS} ${REPORT_FULL} ${FLAGS}
-    echo Running source report: ${type}
-    ${VENDOR_DIR}/vendor/bin/phpcs ${DEFAULTS} ${REPORT_SOURCE} ${FLAGS}
-    ${VENDOR_DIR}/vendor/bin/phpcs ${DEFAULTS} ${FLAGS}
+        echo -e "[phpcs-options] Any argument that can be passed to PHP CodeSniffer\n"
 fi
+
+echo -e "Reports can be found in the target directory as 'report-full.txt' and 'report-source.txt'\n"
 echo -e "Try using 'wpecbf' to attempt fix the sniff violations automatically.\n"
