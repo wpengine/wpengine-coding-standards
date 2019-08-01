@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -e "WP Engine Coding Standards\nVersion 1.0.0\n"
+echo -e "WP Engine Coding Standards\nVersion 0.1.0\n"
 
 SOURCE_DIR=$(readlink "${BASH_SOURCE[0]}")
 VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
