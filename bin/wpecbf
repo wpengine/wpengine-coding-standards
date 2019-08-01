@@ -7,14 +7,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 VENDOR_DIR="$(dirname "$DIR" )"
-DEFAULTS="--standard="WP-Engine-Strict" --ignore=*/build/*,*/node_modules/*,*/vendor/*"
 
-echo "Attempting to beautify against WP Engine Coding Standards"
+echo -e "Attempting to beautify against WP Engine Coding Standards\n"
 
-  if [[ ! -z "${@}" ]]
-      then
-          FLAGS=${@}
-      else
-          FLAGS='.'
-  fi
-  ${VENDOR_DIR}/vendor/bin/phpcbf ${DEFAULTS} ${FLAGS}
+${VENDOR_DIR}/vendor/bin/phpcbf --standard="WP-Engine-Strict" --basepath=. --ignore=*/build/*,*/node_modules/*,*/vendor/* ${@}
