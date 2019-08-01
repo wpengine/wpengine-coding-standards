@@ -1,16 +1,8 @@
 #!/bin/bash
-
 echo -e "WP Engine Coding Standards\nVersion 1.0.0\n"
 
-SOURCE="${BASH_SOURCE[0]}"
-
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-VENDOR_DIR="$(dirname "$DIR" )"
+SOURCE_DIR=$(readlink "${BASH_SOURCE[0]}")
+VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
 
 ${VENDOR_DIR}/vendor/bin/phpcs --basepath=. --report-full=report-full.txt --report-source=report-source.txt --report-summary ${@}
 
