@@ -1,6 +1,6 @@
 ## About
 
-WP Engine WordPress Coding Standards
+WP Engine Coding Standards for WordPress
 
 ## Requirements
 
