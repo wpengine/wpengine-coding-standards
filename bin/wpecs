@@ -7,6 +7,7 @@ VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
 VENDOR_DIR="./"
 
 ${VENDOR_DIR}/vendor/bin/phpcs --config-set default_standard WP-Engine
+
 ${VENDOR_DIR}/vendor/bin/phpcs --standard="WP-Engine" --basepath=../ --ignore=*build*,*node_modules*,*vendor* --report-full=report-full.txt --report-summary=report-summary.txt --report-source ${@}
 
 if [ "${1}" = "-h" ] || [ "${1}" = "--h" ]

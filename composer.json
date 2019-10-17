@@ -35,6 +35,6 @@
 		"bin/wpecbf"
 	],
 	"scripts": {
-        "post-install-cmd": "echo 'hello'"
+        "post-install-cmd": "bin/install.sh"
     }
 }
