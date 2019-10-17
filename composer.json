@@ -35,6 +35,6 @@
 		"bin/wpecbf"
 	],
 	"scripts": {
-        "post-install-cmd": "make install"
+        "post-install-cmd": "echo 'hello'"
     }
 }
