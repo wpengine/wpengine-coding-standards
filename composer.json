@@ -33,5 +33,8 @@
 	"bin": [
 		"bin/wpecs",
 		"bin/wpecbf"
-	  ]
+	],
+	"scripts": {
+        "post-update-cmd": "make install"
+    }
 }
