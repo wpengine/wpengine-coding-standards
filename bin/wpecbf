@@ -6,4 +6,4 @@ VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
 
 echo -e "Attempting to beautify against WP Engine Coding Standards\n"
 
-${VENDOR_DIR}/vendor/bin/phpcbf --standard="WP-Engine-Strict" --basepath=. --ignore=*/build/*,*/node_modules/*,*/vendor/* ${@}
+${VENDOR_DIR}/vendor/bin/phpcbf --standard="WP-Engine-Strict" --basepath=. --ignore=*build*,*node_modules*,*vendor* ${@}
