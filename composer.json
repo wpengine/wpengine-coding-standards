@@ -35,6 +35,6 @@
 		"bin/wpecbf"
 	],
 	"scripts": {
-        "post-package-install": "make install"
+        "post-install-cmd": "make install"
     }
 }
