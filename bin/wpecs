@@ -6,7 +6,7 @@ VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
 
 VENDOR_DIR="./"
 
-${VENDOR_DIR}/vendor/bin/phpcs --basepath=../ --report-full=report-full.txt --report-summary=report-summary.txt --report-source ${@}
+${VENDOR_DIR}/vendor/bin/phpcs --basepath=../ --ignore=*build*,*node_modules*,*vendor* --report-full=report-full.txt --report-summary=report-summary.txt --report-source ${@}
 
 if [ "${1}" = "-h" ] || [ "${1}" = "--h" ]
     then
