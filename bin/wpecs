@@ -7,7 +7,7 @@ VENDOR_DIR="$(dirname "$(dirname "$BASH_SOURCE" )" )"
 echo -e "$BASH_SOURCE\n"
 echo -e "$VENDOR_DIR\n"
 ${VENDOR_DIR}/phpcs --standard="WP-Engine" --basepath=../ --ignore=*build*,*node_modules*,*vendor* --report-full=report-full.txt --report-summary=report-summary.txt --report-source ${@}
-echo -e "${VENDOR_DIR}/phpcs"
+echo -e "${VENDOR_DIR}/bin/phpcs"
 
 if [ "${1}" = "-h" ] || [ "${1}" = "--h" ]
     then
