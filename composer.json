@@ -33,8 +33,5 @@
 	"bin": [
 		"bin/wpecs",
 		"bin/wpecbf"
-	],
-	"scripts": {
-        "post-install-cmd": "bin/install.sh"
-    }
+	]
 }
