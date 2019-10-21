@@ -20,14 +20,14 @@ You will then be able to run WPECS from the any directory:
 
 ## Usage
 
-    **WP-Engine Coding Standard**
+**WP-Engine Coding Standard**
 
-    _The required standard for secure WordPress development._
+_The required standard for secure WordPress development._
 
-    `wpecs .`
+`wpecs .`
 
-    **WP-Engine-Strict Coding Standard**
+**WP-Engine-Strict Coding Standard**
 
-    _The recommend standard for WP-Engine authored plugins._
+_The recommend standard for WP-Engine authored plugins._
 
-    `wpecs --standard="WP-Engine-Strict" .`
+`wpecs --standard="WP-Engine-Strict" .`
