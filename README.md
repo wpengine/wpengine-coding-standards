@@ -17,3 +17,17 @@ You will then be able to run WPECS from the any directory:
     <wpecbf> Attempt to fix sniffs against the WP Engine Strict Coding Standards
 
     Try using 'wpecbf' to fix the sniff violations automatically.
+
+## Usage
+
+    **WP-Engine Coding Standard**
+
+    _The required standard for secure WordPress development._
+
+    `wpecs .`
+
+    **WP-Engine-Strict Coding Standard**
+
+    _The recommend standard for WP-Engine authored plugins._
+
+    `wpecs --standard="WP-Engine-Strict" .`
