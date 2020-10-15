@@ -16,4 +16,4 @@ install:
 	echo "For assistance getting started try 'wpecs -h'\n"
 update:
 	git pull origin master
-	make install
+	$(MAKE) install
