@@ -68,6 +68,17 @@ You can also install the coding standards as a dependency in your local project.
  <rule ref="WP-Engine-Strict"/>
  ```
 
+### Alternative Install (wpecs command)
+
+Clone or download this repository. From terminal, navigate to the download location and install WPECS globally with the following command:
+
+    make install
+
+You will then be able to run WPECS from any directory.
+
+Running `make install` will install WPECS dependencies and register coding standards with PHPCS.
+
+* Note you might need to manually move the binaries to your path, or properly set path, if make fails.
 
 ## Usage
 
@@ -100,6 +111,12 @@ While the following is based on the parent WordPress Coding Standards, simply sw
 * **Atom**: Please see "[Setting up WPCS to work in Atom](https://github.com/WordPress/WordPress-Coding-Standards/wiki/Setting-up-WPCS-to-work-in-Atom)" in the wiki.
 * **Visual Studio**: Please see "[Setting up PHP CodeSniffer in Visual Studio Code](https://tommcfarlin.com/php-codesniffer-in-visual-studio-code/)", a tutorial by Tom McFarlin.
 * **Eclipse with XAMPP**: Please see "[Setting up WPCS when using Eclipse with XAMPP](https://github.com/WordPress/WordPress-Coding-Standards/wiki/How-to-use-WPCS-with-Eclipse-and-XAMPP)" in the wiki.
+
+### Alternative usage (wpecs)
+
+USAGE: wpecs [--strict] [phpcs-options] <path>
+<wpecs> Run the specified path against the WP Engine Coding Standards
+<wpecbf> Attempt to fix sniffs against the WP Engine Strict Coding Standards
 
 ## Results
 
