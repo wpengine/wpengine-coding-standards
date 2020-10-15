@@ -7,7 +7,7 @@ PHPCS_STANDARD="WP-Engine"
 PHPCS_ARGS=${@}
 NEEDS_HELP="false"
 
-if [[ $# -ne 1 ]]; then
+if [[ $# = 0 ]]; then
     NEEDS_HELP="true"
 fi
 
@@ -26,11 +26,7 @@ if [ "${1}" = "--strict" ]; then
     PHPCS_ARGS=${@:2}
 fi
 
-#echo -e "$BASH_SOURCE\n"
-#echo -e "$VENDOR_DIR\n"
 ${VENDOR_DIR}/vendor/bin/phpcs --standard="${PHPCS_STANDARD}" --basepath=../ --ignore=*build*,*node_modules*,*vendor* --report-full=report-full.txt --report-summary=report-summary.txt --report-source ${PHPCS_ARGS}
-
-#echo -e "${VENDOR_DIR}/vendor/bin/phpcs"
 
 echo -e "Reports can be found in the target directory as 'report-full.txt' and 'report-source.txt'\n"
 echo -e "Try using 'wpecbf' to attempt fix the sniff violations automatically.\n"
