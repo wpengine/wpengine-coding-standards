@@ -3,7 +3,29 @@ echo -e "WP Engine Coding Standards\nVersion 1.0.0\n"
 
 SOURCE_DIR=$(readlink "${BASH_SOURCE[0]}")
 VENDOR_DIR="$(dirname "$(dirname "$SOURCE_DIR" )" )"
+PHPCS_STANDARD="WP-Engine"
+PHPCS_ARGS=${@}
+NEEDS_HELP="false"
+
+if [[ $# = 0 ]]; then
+    NEEDS_HELP="true"
+fi
+
+if [ "${1}" = "-h" ] || [ "${1}" = "--h" ] || [ "${NEEDS_HELP}" = "true" ]
+    then
+        echo -e "WP Engine Coding Standards\n"
+        echo -e "USAGE: wpecbf [--strict] [phpcbf-options] <path>\n"
+        echo -e "<wpecs> Run the WP Engine Coding Standards\n"
+        echo -e "<wpecbf> Attempt to fix sniffs against the WP Engine Strict Coding Standards\n"
+        echo -e "[phpcs-options] Any argument that can be passed to PHP CodeSniffer\n"
+        exit 0
+fi
+
+if [ "${1}" = "--strict" ]; then
+    PHPCS_STANDARD="WP-Engine-Strict"
+    PHPCS_ARGS=${@:2}
+fi
 
 echo -e "Attempting to beautify against WP Engine Coding Standards\n"
 
-${VENDOR_DIR}/vendor/bin/phpcbf --standard="WP-Engine-Strict" --basepath=. --ignore=*build*,*node_modules*,*vendor* ${@}
+${VENDOR_DIR}/vendor/bin/phpcbf --standard="${PHPCS_STANDARD}" --basepath=. --ignore=*build*,*node_modules*,*vendor* ${PHPCS_ARGS}
