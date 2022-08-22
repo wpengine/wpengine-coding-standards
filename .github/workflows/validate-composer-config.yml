@@ -8,6 +8,11 @@ jobs:
 
     - uses: php-actions/composer@v6
 
+    - name: Install Dependencies
+      uses: php-actions/composer@v6
+      with:
+        command: install
+
     - name: Validate Composer Config
       uses: php-actions/composer@v6
       with:
