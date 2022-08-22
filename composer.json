@@ -9,6 +9,11 @@
 		"WordPress",
 		"WP-Engine"
 	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
 	"license": "MIT",
 	"authors": [
 		{
