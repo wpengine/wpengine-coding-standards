@@ -1,0 +1,14 @@
+name: Validate Composer Config
+on: pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: php-actions/composer@v6
+
+    - name: Validate Composer Config
+      uses: php-actions/composer@v6
+      with:
+        command: validate
