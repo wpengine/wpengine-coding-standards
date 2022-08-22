@@ -23,6 +23,11 @@
 		"wp-coding-standards/wpcs": "^2",
 		"phpcompatibility/phpcompatibility-wp": "^2"
 	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
 	"minimum-stability": "dev",
     "prefer-stable" : true,
 	"support": {
