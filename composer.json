@@ -13,7 +13,7 @@
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/wpengine/wpecs/graphs/contributors"
+			"homepage": "https://github.com/wpengine/wpengine-coding-standards/graphs/contributors"
 		}
 	],
 	"require": {
