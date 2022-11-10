@@ -1,12 +1,11 @@
-name: Validate Composer Config
+name: Verify Dependencies Install
 on: pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Validate Composer Config
+    - name: Install Dependencies
       uses: php-actions/composer@v6
       with:
-        command: validate
-        only_args: --strict
+        command: install
