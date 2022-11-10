@@ -3,6 +3,7 @@ on: pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
+    continue-on-error: false
     steps:
     - uses: actions/checkout@v3
     - name: Validate Composer Config
