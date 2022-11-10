@@ -16,4 +16,5 @@ jobs:
     - name: Validate Composer Config
       uses: php-actions/composer@v6
       with:
-        command: validate --strict
+        command: validate
+        only_args: --strict
