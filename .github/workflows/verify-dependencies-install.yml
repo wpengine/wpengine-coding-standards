@@ -1,0 +1,11 @@
+name: Verify Dependencies Install
+on: pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: shivammathur/setup-php@v2
+    - name: Install Dependencies
+      run: |
+        composer install
