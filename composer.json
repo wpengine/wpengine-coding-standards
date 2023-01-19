@@ -13,7 +13,7 @@
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/wpengine/wpecs/graphs/contributors"
+			"homepage": "https://github.com/wpengine/wpengine-coding-standards/graphs/contributors"
 		}
 	],
 	"require": {
@@ -29,11 +29,10 @@
 		}
 	},
 	"minimum-stability": "dev",
-    "prefer-stable" : true,
+	"prefer-stable" : true,
 	"support": {
-		"issues": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues",
-		"wiki": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki",
-		"source": "https://github.com/wpengine/WPEngine-Coding-Standards"
+		"issues": "https://github.com/wpengine/wpengine-coding-standards/issues",
+		"source": "https://github.com/wpengine/wpengine-coding-standards"
 	},
 	"bin": [
 		"bin/wpecs",
@@ -55,10 +54,5 @@
 		"check-complete-strict": [
 			"@php ./vendor/phpcsstandards/phpcsdevtools/bin/phpcs-check-feature-completeness ./WP-Engine"
 		]
-	},
-	"config": {
-		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
 	}
 }

@@ -1,4 +1,4 @@
-name: Validate Composer Config
+name: Verify Dependencies Install
 on: pull_request
 jobs:
   test:
@@ -6,6 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: shivammathur/setup-php@v2
-    - name: Validate Composer Config
+    - name: Install Dependencies
       run: |
-        composer validate --strict
+        composer install
